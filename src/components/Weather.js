@@ -17,6 +17,7 @@ const Weather = () => {
     function handleKeyPress(e){
         if(e.key == 'Enter') {
             fetchData();
+            setInput('');
         }
     }
     return (
@@ -33,7 +34,7 @@ const Weather = () => {
                             {weatherData.main.temp}
                         </h1>
                         <p className="status">
-                            {weatherData.weather.main}
+                            {weatherData.weather[0].main}
                         </p>
                         <div className="weather-img">
                             <img src={`https://openweathermap.org/img/wn/${weatherData.weather[0].icon}@2x.png`} className="img"/>
